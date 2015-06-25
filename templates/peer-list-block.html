@@ -1,0 +1,55 @@
+        {% extends "base-page.html" %}
+
+		{% block content %}
+
+      <h3 class="add-bottom">Your Personalized List of contacts</h3>
+
+
+         {% for person in peer_list %}
+            <h5>{{ person.name }}</h5>
+               <dl>
+               <dt><b>{% for item in person.event.all %}   Event: {{ item }} 
+               {% endfor %}</b></dt>
+                  <dd>email: {{ person.email }}</dd>
+                  <dd>Phone: {{ person.telephone_number }}</dd>
+                  <dd>Notes: {{ person.notes }}</dd>
+                  <dd>Favorite Contact: {{ person.favorite_contact }}</dd>
+            </dl>
+         {% endfor %}
+                    
+         {% endblock %}
+
+
+
+
+
+
+         	{% block add %}
+
+            <h3>Add A Contact</h3>
+
+            <ul>
+               
+               <li><form action="." method="post">
+               		{% csrf_token %}
+					{{ c_form.as_p }}
+					<input type="submit" value="Submit" />
+					</form>
+				</li>
+
+            </ul>
+            
+<!--             <h3>Add An Event</h3>
+
+            <ul>
+               
+               <li><form action="." method="post">
+                     {% csrf_token %}
+               {{ e_form.as_p }}
+               <input type="submit" value="Submit" />
+               </form>
+            </li>
+
+            </ul> -->
+
+            {% endblock %}

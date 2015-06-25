@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>People We Meet</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+   <!-- Mobile Specific Metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+    ================================================== -->
+   {% load staticfiles %}
+   <link rel="stylesheet" href="{% static 'css/default.css' %}" >
+	{% load staticfiles %}
+   <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+   {% load staticfiles %}
+   <link rel="stylesheet" href="{% static 'css/media-queries.css' %}">
+   {% load staticfiles %}
+   <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+   <!-- Script
+   ================================================== -->
+	{% load staticfiles %}
+   <script src="{% static "js/modernizr.js" %}"></script>
+
+   <!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="favicon.png" >
+
+</head>
+
+<body>
+
+   <!-- Header
+   ================================================== -->
+   <header id="home">
+
+      <nav id="nav-wrap">
+
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">People We Meet</a>
+	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+         <ul id="nav" class="nav">
+            <li class="current"><a class="smoothscroll" href="/main#home">Home</a></li>
+            <li class="current"><a class="smoothscroll" href="/main#styles">Your Contact List / Add Contact</a></li>
+            <li class="current"><a href="/event#styles">Your Event List / Add Event</a></li>
+            <li class="current"><a href="/admin">Admin Page</a></li>
+
+         </ul> 
+
+      </nav> 
+
+      <div class="row banner">
+         <div class="banner-text">
+            <h1 class="responsive-headline">People We Meet</h1>
+            <h3>A place to store contact information and details about the people you meet.</h3>
+            <hr />
+
+
+
+         </div>
+      </div>
+
+
+
+      <p class="scrolldown">
+         <a class="smoothscroll" href="#styles"><i class="icon-down-circle"></i></a>
+      </p>
+
+   </header> 
+   <!-- 
+   ================================================== -->
+   <section id="styles" style="padding: 90px 0 72px; background: #fff;">
+
+
+      </div> 
+      
+<section id="list" style="padding: 90px 0 72px; background: #fff;">
+      
+      <div class="row add-bottom">
+
+         <div class="eight columns add-bottom">
+
+         <h5> Search for a name in your list </h5>
+
+          <form action=".#styles" method="get">
+              <input type="text" name="q">
+              <input type="submit" value="Search">
+          </form>
+         {% block content %}{% endblock %}
+         
+         </div>
+
+      <div class="four columns add-bottom">
+
+         {% block add %}{% endblock %}
+
+      </div>
+
+</body>
+
+</html>

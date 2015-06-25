@@ -1,0 +1,39 @@
+        {% extends "base-page.html" %}
+
+		{% block content %}
+
+      <h3 class="add-bottom">Your List of Events</h3>
+
+
+         {% for event in e_list %}
+            <h5>{{ event.name }}</h5>
+               <dl>
+                   <dd>Date: {{ event.date  }}</dd>
+               </dl>
+         {% endfor %}
+                    
+      {% endblock %}
+
+
+
+
+
+
+         	{% block add %}
+
+
+            
+            <h3>Add An Event</h3>
+
+            <ul>
+               
+               <li><form action="." method="post">
+                     {% csrf_token %}
+               {{ e_form.as_p }}
+               <input type="submit" value="Submit" placeholder="Find a name"/>
+               </form>
+            </li>
+
+            </ul>
+
+            {% endblock %}
